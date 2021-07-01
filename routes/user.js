@@ -9,6 +9,7 @@ const User = require('../models/User')
 router.post('/register', (req, res, next) => {
     const { errors, isValid } = validation.registerInput(req.body)
     if (!isValid) {
+        console.log('Something is fucked up')
         return res.status(400).json({
             status: 'error',
             message: errors
@@ -32,7 +33,7 @@ router.post('/register', (req, res, next) => {
                             res.json({ status: 'Registration Successful' })
                         }).catch(next)
                 }).catch(next)
-        })
+        }).catch(next)
 })
 
 router.post('/login', (req, res, next) => {

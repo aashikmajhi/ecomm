@@ -28,8 +28,8 @@ app.get('/', (req, res, next) => {
 })
 
 app.use('/api/users', userRouter)
-app.use('/api/products', productRouter)
-app.use('/api/category', categoryRouter)
+app.use('/api/products', auth.verifyUser, auth.verifyAdmin, productRouter)
+app.use('/api/category', auth.verifyAdmin, auth.verifyUser, categoryRouter)
 
 app.use((req, res, next) => {
     let err = new Error('Not Found!')
@@ -46,8 +46,8 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running at localhost:${process.env.PORT}`)
+app.listen(process.env.Port, () => {
+    console.log(`Server is running at localhost:${process.env.Port}`)
 })
 
 module.exports = productRouter

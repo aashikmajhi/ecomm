@@ -2,7 +2,7 @@
   "name": "business",
   "version": "1.0.0",
   "description": "an ecommerce site to extend business online",
-  "main": "index.js",
+  "main": "`index.js`",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.12",
+    "mongoose": "^5.13.0",
     "validator": "^13.6.0"
   },
   "devDependencies": {
